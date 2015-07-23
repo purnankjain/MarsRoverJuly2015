@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+
 public class RoverTest {
 
     @Test
@@ -26,7 +27,18 @@ public class RoverTest {
     public void move1PointToNorthOnMoveCommand() {
         Rover rover = new Rover(0, 0, 0);
         Rover expectedRover = new Rover(0, 1, 0);
-        String command = "Move";
+        String command = "MOVE";
+
+        rover.followCommand(command);
+
+        assertEquals(expectedRover, rover);
+    }
+
+    @Test
+    public void turnLeftOnLeftCommand() {
+        Rover rover = new Rover(0, 0, 0);
+        Rover expectedRover = new Rover(0, 0, 1);
+        String command = "LEFT";
 
         rover.followCommand(command);
 

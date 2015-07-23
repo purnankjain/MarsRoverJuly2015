@@ -1,5 +1,6 @@
 package com.purnank.rover;
 
+
 public class Rover {
     private int x;
     private int y;
@@ -21,7 +22,6 @@ public class Rover {
         if (x != rover.x) return false;
         if (y != rover.y) return false;
         return direction == rover.direction;
-
     }
 
     @Override
@@ -33,6 +33,11 @@ public class Rover {
     }
 
     public void followCommand(String command) {
-        y++;
+        if(command.equals("MOVE")) {
+            y++;
+        }
+        else if(command.equals("LEFT")) {
+            direction++;
+        }
     }
 }
