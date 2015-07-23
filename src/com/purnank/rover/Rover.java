@@ -34,7 +34,16 @@ public class Rover {
 
     public void followCommand(String command) {
         if(command.equals("MOVE")) {
-            y++;
+            switch (direction) {
+                case 0 : y++;
+                    break;
+                case 1 : x--;
+                    break;
+                case 2 : y--;
+                    break;
+                case 3 : x++;
+                    break;
+            }
         }
         else if(command.equals("LEFT")) {
             direction = (direction + 1) % 4;

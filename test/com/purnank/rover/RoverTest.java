@@ -55,4 +55,15 @@ public class RoverTest {
 
         assertEquals(expectedRover, rover);
     }
+
+    @Test
+    public void move1PointToEastWhenMoveCommandAndHeadEast() {
+        Rover rover = new Rover(0, 0, 3);
+        Rover expectedRover = new Rover(1, 0, 3);
+        String command = "MOVE";
+
+        rover.followCommand(command);
+
+        assertEquals(expectedRover, rover);
+    }
 }
