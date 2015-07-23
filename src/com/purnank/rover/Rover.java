@@ -3,21 +3,24 @@ package com.purnank.rover;
 public class Rover {
     private int x;
     private int y;
+    private int direction;
 
-    public Rover(int x, int y) {
+    public Rover(int x, int y, int direction) {
         this.x = x;
         this.y = y;
+        this.direction = direction;
     }
 
     @Override
-    public boolean equals(Object other) {
-        if (this == other) return true;
-        if (other == null || getClass() != other.getClass()) return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        Rover otherRover = (Rover) other;
+        Rover rover = (Rover) o;
 
-        if (x != otherRover.x) return false;
-        return y == otherRover.y;
+        if (x != rover.x) return false;
+        if (y != rover.y) return false;
+        return direction == rover.direction;
 
     }
 
@@ -25,6 +28,7 @@ public class Rover {
     public int hashCode() {
         int result = x;
         result = 31 * result + y;
+        result = 31 * result + direction;
         return result;
     }
 }
