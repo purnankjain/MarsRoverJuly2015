@@ -44,4 +44,15 @@ public class RoverTest {
 
         assertEquals(expectedRover, rover);
     }
+
+    @Test
+    public void turnRightOnRightCommand() {
+        Rover rover = new Rover(0, 0, 0);
+        Rover expectedRover = new Rover(0, 0, 3);
+        String command = "RIGHT";
+
+        rover.followCommand(command);
+
+        assertEquals(expectedRover, rover);
+    }
 }

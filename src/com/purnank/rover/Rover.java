@@ -37,7 +37,10 @@ public class Rover {
             y++;
         }
         else if(command.equals("LEFT")) {
-            direction++;
+            direction = (direction + 1) % 4;
+        }
+        else if(command.equals("RIGHT")) {
+            direction = ((direction + 4) - 1) % 4;
         }
     }
 }
