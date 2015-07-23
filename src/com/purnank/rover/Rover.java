@@ -31,4 +31,8 @@ public class Rover {
         result = 31 * result + direction;
         return result;
     }
+
+    public void followCommand(String command) {
+        y++;
+    }
 }

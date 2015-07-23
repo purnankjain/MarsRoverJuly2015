@@ -8,17 +8,28 @@ public class RoverTest {
 
     @Test
     public void positionInitializedIs0And0() {
-        Rover rover1 = new Rover(0, 0, 0);
-        Rover rover2 = new Rover(0, 0, 0);
+        Rover rover = new Rover(0, 0, 0);
+        Rover expectedRover = new Rover(0, 0, 0);
 
-        assertEquals(rover1, rover2);
+        assertEquals(expectedRover, rover);
     }
 
     @Test
     public void directionIsNorthWhenInitialisedAsNorth() {
-        Rover rover1 = new Rover(0, 0, 0);
-        Rover rover2 = new Rover(0, 0, 0);
+        Rover rover = new Rover(0, 0, 0);
+        Rover expectedRover = new Rover(0, 0, 0);
 
-        assertEquals(rover1, rover2);
+        assertEquals(expectedRover, rover);
+    }
+
+    @Test
+    public void move1PointToNorthOnMoveCommand() {
+        Rover rover = new Rover(0, 0, 0);
+        Rover expectedRover = new Rover(0, 1, 0);
+        String command = "Move";
+
+        rover.followCommand(command);
+
+        assertEquals(expectedRover, rover);
     }
 }
