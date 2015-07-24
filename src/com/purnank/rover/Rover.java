@@ -13,15 +13,15 @@ public class Rover {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(Object other) {
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
 
-        Rover rover = (Rover) o;
+        Rover otherRover = (Rover) other;
 
-        if (x != rover.x) return false;
-        if (y != rover.y) return false;
-        return direction == rover.direction;
+        if (x != otherRover.x) return false;
+        if (y != otherRover.y) return false;
+        return direction == otherRover.direction;
     }
 
     @Override
