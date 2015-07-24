@@ -21,6 +21,6 @@ public class RoverController {
     }
 
     public String nextCommand() {
-        return "MOVE";
+        return commandList.get(0);
     }
 }
